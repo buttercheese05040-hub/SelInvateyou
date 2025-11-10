@@ -2,6 +2,6 @@ echo "# SelInvateyou" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git branch -Card.html
+git branch -card.html
 git remote add origin https://github.com/buttercheese05040-hub/SelInvateyou.git
 git push -u origin main
