@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Invited! 💌</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+    :root {
+      --color-pink: #FFC0CB;
+      --color-rose: #B06F80;
+      --color-gold: #C4A000;
+      --color-cream: #FFF5EE;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      /* Background gradient for a soft, festive look */
+      background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-pink) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: var(--color-rose);
+      padding: 20px 0; /* Add vertical padding for better spacing */
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--color-gold);
+      /* Default large size for Desktop/Larger Screens */
+      font-size: 5rem; 
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      padding: 0 10px; /* Ensures text has padding on mobile */
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 480px;
+      width: 90%; /* Responsive width */
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 1rem;
+    }
+
+    .click-text {
+      font-family: 'Playfair Display', serif;
+      color: var(--color-rose);
+      font-size: 1.25rem;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .flower {
+      position: absolute;
+      width: 70px;
+    }
+
+    .flower.left {
+      top: -20px;
+      left: -20px;
+      transform: rotate(-15deg);
+    }
+
+    .flower.right {
+      bottom: -20px;
+      right: -20px;
+      transform: rotate(15deg);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .floaty {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .gold-button {
+      background-color: var(--color-gold);
+      color: white;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-top: 2rem;
+      transition: all 0.3s;
+      text-decoration: none; /* Remove underline for anchor tag */
+    }
+    .gold-button:hover {
+      background-color: #d4af37;
+    }
+    
+    /* 📱 MOBILE VIEW OPTIMIZATION */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem; /* Reduced size for phones */
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      .card {
+        padding: 1rem;
+      }
+      .click-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <br>
+  <br>
+  <div class="card floaty" id="openInvite">
+    <h1>Sel Invated you to here First Birthday and Baptism</h1>
+    <img src="envelop2.png" alt="Envelope Invitation">
+    <p class="click-text">💌 Click to Open 💌</p>
+    
+  </div>
+  
+
+
+  <script>
+    // 🥳 Change this link to your invitation HTML or published website link
+    const INVITE_URL = "Invatition.html"; // or "https://yourdomain.com/invitation.html"
+
+    const openInvite = document.getElementById("openInvite");
+    const button = document.getElementById("directLink");
+
+    function openLink(e) {
+      // Prevent the default anchor link behavior for the button
+      e.preventDefault(); 
+      window.location.href = INVITE_URL;
+    }
+
+    openInvite.addEventListener("click", openLink);
+    button.addEventListener("click", openLink);
+  </script>
+</body>
+</html>

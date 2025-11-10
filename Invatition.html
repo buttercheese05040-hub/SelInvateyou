@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daughter Selene's First Birthday & Christening</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom styles for the princess theme */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+        
+        :root {
+            --color-pink: #FFC0CB; /* Light Pink */
+            --color-rose: #B06F80; /* Dark Rose Pink */
+            --color-gold: #C4A000; /* Gold Accent */
+            --color-cream: #FFF5EE; /* Creamy White */
+        }
+        
+        .font-script {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gold-text {
+            color: var(--color-gold);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .rose-text {
+            color: var(--color-rose);
+        }
+
+        .bg-gradient-pink {
+            background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-pink) 100%);
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+            margin: 2rem auto;
+            width: 80%;
+        }
+
+        /* Responsive styling for image stacking */
+        .img-gallery > div {
+            min-width: 300px; /* Ensure images don't get too small */
+        }
+
+        /* Styling for the sticky mobile menu button */
+        #menu-button {
+            z-index: 50;
+        }
+
+        /* Custom Modal Styling */
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        /* Gold Button */
+        .gold-button {
+            background-color: var(--color-gold);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        .gold-button:hover {
+            background-color: #D4AF37; /* Slightly darker gold on hover */
+        }
+        
+        /* Map container style updated for an image */
+        .map-container {
+            width: 100%;
+            height: auto;
+            max-height: 450px; /* Adjust height for visual balance */
+        }
+
+    </style>
+</head>
+<body class="bg-gradient-pink font-body text-gray-800 antialiased">
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-lg p-4 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-xl font-script rose-text">Selene's Celebration</span>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="#home" class="hover:text-pink-600 transition duration-150">Home</a>
+                <a href="#details" class="hover:text-pink-600 transition duration-150">Details</a>
+                <a href="#godparents" class="hover:text-pink-600 transition duration-150">Godparents</a> 
+               <a href="RSVP.html" class="hover:text-pink-600 transition duration-150">RSVP</a> 
+                <a href="#about" class="hover:text-pink-600 transition duration-150">Our Daughter</a>
+            </div>
+            <button id="menu-button" class="md:hidden text-gray-700 p-2 rounded-md hover:bg-gray-100 transition duration-150" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-sm z-30 transform -translate-x-full transition-transform duration-300 md:hidden pt-20">
+        <div class="flex flex-col space-y-4 p-8 text-xl font-script rose-text">
+            <a href="#home" onclick="toggleMenu()">Home</a>
+            <a href="#details" onclick="toggleMenu()">Details</a>
+            <a href="#godparents" onclick="toggleMenu()">Godparents</a>
+            <a href="RSVP.html" class="hover:text-pink-600 transition duration-150">RSVP</a> 
+            <a href="#about" onclick="toggleMenu()">Our Daughter</a>
+        </div>
+    </div>
+
+    <main class="pt-16">
+        
+        <section id="home" class="py-12 md:py-20 text-center bg-cover bg-center" 
+                      style="background-image: url('bg1.jpg');">
+            <div class="container mx-auto px-4 bg-white/70 backdrop-blur-sm p-6 rounded-xl max-w-4xl shadow-2xl">
+                
+                <h1 class="font-script text-4xl md:text-6xl gold-text mt-4 mb-2">
+                    ✨ You Are Cordially Invited to a Royal Celebration ✨
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto rose-text mb-6">
+                    Parents' Jhay&Sy joyfully request the honor of your presence at the double celebration of their daughter,
+                    Selene Margarette E. Rayso.
+                </p>
+
+                <div class="md:flex md:justify-center md:items-center md:space-x-8">
+                    <img src="Cover1.jpg" alt="Selene with Gold Balloon" 
+                          class="w-full md:w-1/3 mx-auto rounded-xl shadow-lg mb-6 md:mb-0 transform hover:scale-105 transition duration-500" 
+                          onerror="this.onerror=null;this.src='https://placehold.co/800x1200/F0F8FF/C4A000?text=Princess+Selene+at+1';">
+                    
+                    <div class="md:w-1/2 text-left space-y-4 p-4">
+                        <p class="text-xl font-bold rose-text">Join us as she is dedicated in faith and we celebrate the glorious milestone of her **First Christening and Birthday**.</p>
+                        
+                        <div class="text-2xl font-script gold-text mt-4">
+                            <p>
+                                Countdown to Event:
+                                <br>
+                                <span id="countdown" class="text-3xl font-bold rose-text">Loading...</span>
+                            </p>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <a href="#godparents" class="gold-button inline-block text-xl md:text-2xl">
+                                View Invitation Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="details" class="container mx-auto px-4 py-12">
+            <h2 class="font-script text-4xl gold-text text-center mb-10">The Royal Itinerary & Venues</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto text-center">
+                
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-rose-400">
+                    <h3 class="text-2xl font-script rose-text mb-3">The Dedication of Our Daughter & Birthday Ball</h3>
+                    <p class="text-lg mb-4">
+                        We are overjoyed to host both the **Christening Ceremony** and the **First Birthday Ball** at a single beautiful location. Please arrive promptly to ensure you are seated before the ceremony begins.
+                    </p>
+                    
+                    <div class="space-y-3 mt-4 text-left">
+                        <p class="text-xl font-bold gold-text flex items-center"><i class="fas fa-map-marker-alt mr-3"></i> Location: <span class="rose-text ml-2">KRISTONG HARI PARISH CHURCH PHASE 2</span></p>
+                        <p class="text-xl font-bold gold-text flex items-center"><i class="fas fa-home mr-3"></i> Address: <span class="rose-text ml-2">PHASE 2, DASMARIÑAS, PALIPARAN</span></p>
+                        <p class="text-xl font-bold gold-text flex items-center"><i class="fas fa-clock mr-3"></i> Time: <span class="rose-text ml-2">9:30 AM</span></p>
+                    </div>
+                    <p class="text-sm mt-4 text-gray-500">(The Christening Ceremony will begin promptly, followed immediately by the Birthday Ball/Reception.)</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-rose-400 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-script rose-text mb-3">Royal Directions to the Venue</h3>
+                        <p class="text-lg mb-4">
+                            Please use the map image below for a visual guide. Click the button to open **live directions** on Google Maps.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-4 flex-grow">
+                        <div class="map-container rounded-lg overflow-hidden border-2 border-rose-300">
+                            <img src="MAP.jpg" alt="Map image showing directions to the venue" 
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x450/F0F8FF/B06F80?text=Map+Visual+Here';">
+                        </div>
+                        <a href="https://maps.app.goo.gl/9FdZVqxGuLz9EAct8" target="_blank" class="gold-button inline-block text-base px-4 py-2 mt-4">
+                            Open Live Directions 🗺️
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-rose-400">
+                    <h3 class="text-2xl font-script rose-text mb-3">Royal Contacts for More Info</h3>
+                    <p class="text-lg mb-4">
+                        To Send,Your respowns can here entirely on celebrating this blessed day, please direct any urgent day-of questions regarding directions, timings, or details to our designated contact.
+                    </p>
+                    
+                    <div class="space-y-3 mt-4 text-center">
+                        <p class="text-xl font-bold gold-text">For More Info:</p>
+                        <p class="text-2xl font-bold rose-text flex items-center justify-center">
+                             <span class="mr-2"><i class="fab fa-facebook"></i></span> jhayarrayso
+                        </p>
+                        <p class="text-sm mt-4 text-gray-500">Please message this Facebook profile.</p>
+                        <a href="https://www.facebook.com/share/1BJoxuJfk5/" target="_blank" class="gold-button inline-block text-base px-6 py-2">
+                            Visit our Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="godparents" class="container mx-auto px-4 py-12">
+            <h2 class="font-script text-4xl gold-text text-center mb-10">Our Esteemed Godparents: Ninongs & Ninangs</h2>
+            
+            <div class="max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-2xl">
+                <p class="text-lg mb-8 rose-text text-center">
+                    We are honored and blessed to have these wonderful individuals guide Selene in faith and love throughout her life. Your presence on her special day is deeply cherished.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 text-left">
+    <div>
+        <h3 class="text-2xl font-script gold-text mb-4 border-b-2 border-rose-300 pb-2">🤵 Ninongs (Godfathers)</h3>
+        
+        <div class="grid grid-cols-2 gap-x-6">
+            <ul class="space-y-2 text-lg font-body pl-4 list-disc list-outside">
+                <li>Marlon</li>
+                <li>Michael</li>
+                <li>Willy</li>
+                <li>Rhew</li>
+                <li>Rolly</li>
+                <li>Edward</li>
+                <li>Timothy</li>
+                <li>Roghie</li>
+                <li>Jerome</li>
+                <li>April</li>
+            </ul>
+
+            <ul class="space-y-2 text-lg font-body pl-4 list-disc list-outside">
+                <li>Jhonrey</li>
+                <li>Mico</li>
+                <li>Reymond</li>
+                <li>Clark</li>
+                <li>Patrict</li>
+                <li>Ronnie</li>
+                <li>Richard</li>
+                <li>John</li>
+                <li>Johnmark</li>
+                <li>Jheng</li>
+            </ul>
+        </div>
+        
+    </div>
+                    <div>
+                        <h3 class="text-2xl font-script gold-text mb-4 border-b-2 border-rose-300 pb-2">👰 Ninangs (Godmothers)</h3>
+                        <ul class="space-y-2 text-lg font-body pl-4 list-disc list-outside">
+                            <li>Sheryl Escarlan</li>
+                            <li>Rosezelynda Regular</li>
+                            <li>Annie andress</li>
+                            <li>Jhoy Alfanta</li>
+                            <li>Jane Mahinay</li>
+                            <li>Angelica Racaza</li>
+                            <li>Dyriel Amacam</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+            <div class="text-center pt-10">
+    <a href="RSVP.html" class="gold-button inline-block text-xl">
+        Proceed to RSVP Form
+    </a>
+</div>
+        </section>
+
+       
+        </section>
+
+
+        <div class="section-divider"></div>
+
+        <section id="about" class="container mx-auto px-4 py-12">
+            <h2 class="font-script text-4xl gold-text text-center mb-10">Our Daughter: Selene Margarette E. Rayso</h2>
+            
+            <div class="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-2xl">
+                <div class="md:flex md:space-x-8">
+                    <div class="md:w-1/2 space-y-4 mb-8 md:mb-0">
+                        <p class="text-lg rose-text">Born: November 29 2024</p>
+                        <p class="text-lg">
+                            Our sweet girl has officially completed her first trip around the sun! This past year has been the most cherished adventure, filled with new discoveries, loud giggles, and endless love. We are so blessed by her joyful spirit and the light she brings to our lives every single day.
+                        </p>
+                        
+                        
+                        <h3 class="text-2xl font-script rose-text mt-6 mb-2">Gifts Ideas</h3>
+                        <ul class="list-disc list-inside space-y-1 pl-4">
+                            <li><strong>*EQ Pants XXL diaper </strong></li>
+                            <li><strong>*Baby Cloths (12-24 Months )</strong></li>
+                            <li><strong>*Baby Dove Rich Moisture Hair to Toe Wash (blue)</strong> </li>
+                            <li><strong>*Monetary gift For Baby Sel</strong></li>
+                        </ul>
+<br>
+<br>
+
+                            <p class="text-lg font-bold gold-text">
+                                <p class="text-lg font-bold gold-text">
+                                "Just Because we gave you 
+                                ideas doesn't mean your 
+                                obligated to give. Your 
+                                presence, love and prayers 
+                                are the most precious gift that 
+                                you can give"
+                            </p>
+                            </p>
+                    </div>
+
+                    <div class="md:w-1/2 img-gallery grid grid-cols-2 gap-4">
+                        <img src="1.JPG" alt="Selene Smiling" class="w-full h-auto rounded-lg shadow-md border-2 border-rose-300">
+                        <img src="5.JPG" alt="Selene with Rattle" class="w-full h-auto rounded-lg shadow-md border-2 border-rose-300">
+                        <img src="4.JPG" alt="Selene Close up" class="w-full h-auto rounded-lg shadow-md border-2 border-rose-300">
+                        <img src="2.JPG" alt="Selene Playing" class="w-full h-auto rounded-lg shadow-md border-2 border-rose-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-rose-400 text-white text-center p-4 mt-12">
+        <p>© [2025] Selene's Celebration. We can't wait to see you!</p>
+    </footer>
+
+    <div id="confirmation-modal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 pointer-events-none">
+        <div class="bg-white p-8 rounded-xl max-w-sm w-11/12 text-center shadow-2xl transform scale-95 transition-transform duration-300">
+            <h3 class="font-script text-3xl gold-text mb-4">🎉 Royal Confirmation</h3>
+            <p class="text-lg rose-text mb-4">Your Response Has Been Received!</p>
+            <p class="text-lg mb-6">
+                Thank you for letting us know you will be attending for our Daughter **Selene Margarette E. Rayso's** Christening and First Birthday Ball!
+            </p>
+            <p class="text-sm text-gray-600 mb-4">
+                We have added your name to the Royal Guest List and cannot wait to share this blessed and joyful day with you.
+            </p>
+            <button onclick="closeModal()" class="gold-button inline-block px-6 py-2">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // --- Navigation Logic ---
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('-translate-x-full');
+            document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+        }
+
+        // --- Smooth Scrolling for Navigation ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('-translate-x-full')) {
+                    toggleMenu();
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- Modal Logic ---
+        function openModal() {
+            const modal = document.getElementById('confirmation-modal');
+            const modalContent = modal.querySelector('div');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+            modalContent.classList.add('scale-100');
+            modalContent.classList.remove('scale-95');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('confirmation-modal');
+            const modalContent = modal.querySelector('div');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
+        
+        // Close modal if user clicks outside
+        document.getElementById('confirmation-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // --- RSVP Submission Handler (Simulated) ---
+        function handleRsvpSubmit(event) {
+            event.preventDefault(); // Stop the form from submitting normally
+            
+            const form = document.getElementById('rsvp-form');
+            const attendance = form.elements['attendance'].value;
+            const names = document.getElementById('names').value.trim();
+
+            if (attendance === 'cannot') {
+                // If user regrets attendance, show a different message (optional)
+                console.log(`RSVP received: ${names} regrets attendance.`);
+            } else if (attendance === 'both' || attendance === 'reception') {
+                // If attending, simulate successful submission
+                openModal();
+                console.log(`RSVP received: ${names} is attending the celebration!`);
+            } else {
+                 // Should not happen due to 'required' but good for robustness
+                 console.error("Please select an attendance option.");
+                 return;
+            }
+
+            // In a real application, you would send this data to Firebase Firestore here.
+            // For this runnable example, we just clear the form and show the modal.
+            form.reset();
+        }
+
+        // --- Font Awesome for Icons ---
+        // Ensure Font Awesome script runs successfully
+        document.addEventListener('DOMContentLoaded', () => {
+            const script = document.createElement('script');
+            script.src = "https://kit.fontawesome.com/a076d05399.js";
+            script.crossOrigin = "anonymous";
+            document.head.appendChild(script);
+        });
+        // --- Countdown Timer ---
+const targetDate = new Date("November 30, 2025 09:30:00").getTime(); // <-- change date/time here
+
+const countdownEl = document.getElementById("countdown");
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+        countdownEl.innerHTML = "It's time! 🎉";
+        clearInterval(timer);
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+const timer = setInterval(updateCountdown, 1000);
+updateCountdown();
+
+    </script>
+</body>
+</html>

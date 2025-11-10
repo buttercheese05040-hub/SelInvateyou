@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP Form - Princess Selene's Celebration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+    :root {
+      --color-pink: #FFC0CB;
+      --color-rose: #B06F80;
+      --color-gold: #C4A000;
+      --color-cream: #FFF5EE;
+    }
+    .font-script { font-family: 'Playfair Display', serif; }
+    .font-body { font-family: 'Inter', sans-serif; }
+    .gold-text { color: var(--color-gold); text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+    .rose-text { color: var(--color-rose); }
+    .bg-gradient-pink { background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-pink) 100%); }
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+      margin: 2rem auto;
+      width: 80%;
+    }
+    .gold-button {
+      background-color: var(--color-gold);
+      color: white;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+    .gold-button:hover { background-color: #D4AF37; }
+    .modal { transition: opacity 0.3s ease-in-out; z-index: 1000; }
+  </style>
+</head>
+
+<body class="bg-gradient-pink font-body text-gray-800 antialiased">
+  <main class="py-12">
+    <div class="section-divider"></div>
+
+    <section id="rsvp-form-page" class="container mx-auto px-4 py-12">
+      <h2 class="font-script text-4xl gold-text text-center mb-10">
+        Kindly Confirm Your Attendance
+      </h2>
+
+      <div class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-2xl">
+        <p class="text-lg mb-6 rose-text text-center">
+          Please help us finalize the details for the Christening and First Birthday Ball by replying no later than 
+          <strong>November 21, 2025</strong>. Your prompt response is a treasure!
+        </p>
+
+        <!-- Formspree Form -->
+       <form id="rsvp-form" action="https://formspree.io/f/meovjabz" method="POST" class="space-y-6">
+
+
+          <div>
+            <label for="names" class="block text-xl font-bold gold-text mb-2">👑 Who is Joining the Celebration?</label>
+            <input type="text" id="names" name="Names" required
+              class="w-full p-3 border-2 border-rose-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-150">
+          </div>
+
+          <div>
+            <p class="block text-xl font-bold gold-text mb-3">💖 Your Royal Response</p>
+            <div class="space-y-2">
+              <label class="flex items-center text-lg">
+                <input type="radio" name="Attendance" value="Delighted to Attend! (Both Christening & Birthday Ball)" required
+                  class="h-5 w-5 text-rose-500 border-rose-300 focus:ring-rose-500">
+                <span class="ml-3">Delighted to Attend! (Both Christening & Birthday Ball)</span>
+              </label>
+              <label class="flex items-center text-lg">
+                <input type="radio" name="Attendance" value="Reception Only, Please. (Birthday Ball only)"
+                  class="h-5 w-5 text-rose-500 border-rose-300 focus:ring-rose-500">
+                <span class="ml-3">Reception Only, Please. (Birthday Ball only)</span>
+              </label>
+              <label class="flex items-center text-lg">
+                <input type="radio" name="Attendance" value="Regretfully Cannot Attend."
+                  class="h-5 w-5 text-rose-500 border-rose-300 focus:ring-rose-500">
+                <span class="ml-3">Regretfully Cannot Attend.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div>
+              <label for="adults" class="block text-xl font-bold gold-text mb-2">✨ Adults</label>
+              <input type="number" id="adults" name="Adults" min="0" value="1" required
+                class="w-full p-3 border-2 border-rose-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-150">
+            </div>
+            <div>
+              <label for="children" class="block text-xl font-bold gold-text mb-2">✨ Children (under 12)</label>
+              <input type="number" id="children" name="Children" min="0" value="0" required
+                class="w-full p-3 border-2 border-rose-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-150">
+            </div>
+          </div>
+
+          <div>
+            <label for="blessing" class="block text-xl font-bold gold-text mb-2">💌 A Word for the Princess (Optional)</label>
+            <textarea id="blessing" name="Blessing" rows="3"
+              class="w-full p-3 border-2 border-rose-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-150"></textarea>
+          </div>
+
+          <div class="pt-4 text-center">
+            <button type="submit" class="gold-button text-xl">Send Response to the Castle</button>
+          </div>
+
+          <div class="text-center pt-10">
+            <a href="Invatition.html" class="gold-button inline-block text-xl">Home</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Confirmation -->
+  <div id="confirmation-modal"
+    class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 pointer-events-none">
+    <div
+      class="bg-white p-8 rounded-xl max-w-sm w-11/12 text-center shadow-2xl transform scale-95 transition-transform duration-300">
+      <h3 class="font-script text-3xl gold-text mb-4">🎉 Royal Confirmation</h3>
+      <p class="text-lg rose-text mb-4">Your Response Has Been Received!</p>
+      <p class="text-lg mb-6">Thank you for confirming your attendance!</p>
+      <p class="text-sm text-gray-600 mb-4">We have added your name to the Royal Guest List.</p>
+      <button onclick="closeModal()" class="gold-button inline-block px-6 py-2">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // --- Modal Logic ---
+    function openModal() {
+      const modal = document.getElementById('confirmation-modal');
+      const modalContent = modal.querySelector('div');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      modalContent.classList.add('scale-100');
+      modalContent.classList.remove('scale-95');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('confirmation-modal');
+      const modalContent = modal.querySelector('div');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('confirmation-modal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+
+    // --- Handle Submit (Formspree) ---
+    document.getElementById('rsvp-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = true;
+      button.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          openModal();
+          form.reset();
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        alert('Network error. Please try again later.');
+      }
+
+      button.disabled = false;
+      button.textContent = 'Send Response to the Castle';
+    });
+  </script>
+</body>
+</html>
+<script>
+document.getElementById('rsvp-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true;
+  button.textContent = 'Sending...';
+
+  try {
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      // ✅ Success — show confirmation modal and reset form
+      openModal();
+      form.reset();
+    } else {
+      const data = await response.json().catch(() => ({}));
+      alert(data.error || "Something went wrong. Please check your Formspree settings.");
+    }
+  } catch (error) {
+    alert("Network error: " + error.message);
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Send Response to the Castle';
+  }
+});
+</script>
